@@ -2,9 +2,21 @@
 
 import requests
 from bs4 import BeautifulSoup
+import os
+from time import sleep
 
-print(" "*20 + "CAR REGISTRATION CHECKER (SINDH)\n\n")
+c = os.get_terminal_size().columns
+bar = "="*c
 
+def title():
+    os.system("clear")
+    print(bar)
+    print(f"{'CAR REGISTRATION CHECKER':^{c}}")
+    print(bar)
+    print()
+    print()
+
+title()
 num = input("Please enter number plate: ")
 
 print("\nGetting Data\n")
@@ -20,8 +32,17 @@ hp = veh_det[12].get_text()
 owner = veh_det[7].get_text()
 
 print("Data Retrieved\n\n")
-print("Number Plate: %s" % num_plate)
-print("Owner Name: %s" % owner)
-print("Make: %s" % make)
-print("Horsepower: %s" % hp)
-print("\n\n" + " "*20 + "THANKYOU FOR USING THIS SOFTWARE\nMade by osama")
+sleep(1)
+title()
+print(f"{'Number Plate':<15}{num_plate:<20}")
+print(f"{'Owner Name':<15}{owner:<20}")
+print(f"{'Make':<15}{make:<20}")
+print(f"{'Horsepower':<15}{hp:<20}")
+print()
+print()
+print(bar)
+print(f"{'THANKYOU FOR USING THIS SOFTWARE':^{c}}")
+print(f"{'MADE BY OSAMA':^{c}}")
+print(bar)
+input()
+os.system('clear')
