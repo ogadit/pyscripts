@@ -30,11 +30,15 @@ for x in range(len(prayers)): #Loop through prayer list
         currentprayer = prayers[x][0]
         ind = 0 if x==4 else x+1
 
-
+if currentprayer == '':
+    currentprayer = [4][0]
 
 nextprayer = prayers[ind][0] #Get the next prayer name
 npt = dt.datetime.strptime(prayers[ind][1], "%H:%M") #Get the next Prayers Time
 
 tt = npt - ct #Subtract The Prayer Time From Current Time
-
-print(f"It is time for {currentprayer} \nNext prayer is {prayers[ind][0]} in {tt.seconds//3600} hours and {(tt.seconds//60)%60} minutes")
+col = "\033[1;37;42m "
+res = "\033[0;40m"
+print(f"{col}It is time for {currentprayer}{res}")
+print(f"{col}Next prayer is {prayers[ind][0]} in{res}")
+print(f"{col}{tt.seconds//3600} hours and {(tt.seconds//60)%60} minutes{res}")
