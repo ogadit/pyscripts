@@ -7,7 +7,7 @@ import time
 import datetime as dt
 
 try:
-    tjson = requests.get("http://api.aladhan.com/v1/timingsByCity?city=Karachi&country=Pakistan&method=1&school=1").json()["data"]["timings"]
+    tjson = requests.get("http://api.aladhan.com/v1/timingsByCity?city=Karachi&country=Pakistan&method=1&school=1", timeout=2).json()["data"]["timings"]
 except:
     print("Couldnt get Timings")
     exit()
