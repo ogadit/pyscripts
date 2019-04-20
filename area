@@ -1,0 +1,25 @@
+#!/bin/python
+
+import sys
+from math import pi as pi
+
+def circle(r):
+    return pi*int(r)**2
+
+try:
+    shape = sys.argv[1]
+except IndexError:
+    print("You failed to provide shape \nProgram Aborted")
+    sys.exit(1)
+
+shape = shape.lower()
+
+if shape == "circle":
+    try:
+        r = sys.argv[2]
+        print(round(circle(r)))
+
+    except IndexError:
+        print("You failed to provide radius\nProgram Aborted")
+        sys.exit(1)
+
