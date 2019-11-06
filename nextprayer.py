@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/python
+#!/usr/bin/python3
 
 import requests
 import json

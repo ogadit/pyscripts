@@ -2,3 +2,4 @@ curse.py
 termux-sudo
 server
 .gitignore
+.vscode/
